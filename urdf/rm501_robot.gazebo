@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+  <!-- ros_control plugin -->
+  
+  
+  <gazebo>
+      <!-- Joint state publisher -->
+      <plugin filename="libgazebo_ros2_control.so" name="gazebo_ros2_control">
+        <parameters>$(find rm501_description)/config/rm501_controller.yaml</parameters>
+      </plugin>
+      
+  </gazebo>  
+
+    <!-- Transmissions are where the ros_controller interacts -->
+    <ros2_control name="GazeboSystem" type="system">
+      <hardware>
+        <plugin>gazebo_ros2_control/GazeboSystem</plugin>
+      </hardware>
+      <joint name="rm501_joint1">
+        <command_interface name="position">
+          <param name="min">-5</param>
+          <param name="max">5</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+      <joint name="rm501_joint2">
+        <command_interface name="position">
+          <param name="min">-5</param>
+          <param name="max">5</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>
+      <joint name="rm501_joint3">
+        <command_interface name="position">
+          <param name="min">-5</param>
+          <param name="max">5</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>  
+      <joint name="rm501_joint4">
+        <command_interface name="position">
+          <param name="min">-5</param>
+          <param name="max">5</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>      
+      <joint name="rm501_joint5">
+        <command_interface name="position">
+          <param name="min">-5</param>
+          <param name="max">5</param>
+        </command_interface>
+        <state_interface name="position">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+        <state_interface name="velocity">
+          <param name="initial_value">0.0</param>
+        </state_interface>
+      </joint>      
+    </ros2_control>
+  
+</robot>
